@@ -9,6 +9,8 @@ namespace DotNetCoreReposityMediatorCQRS.Repository.Interfaces.Requests
 {
     public interface IRepositoryRequestBase<TEntity> where TEntity : class
     {
-        Task<IEnumerable<TEntity>> Obter(Expression<Func<TEntity, bool>> filter = null);
+        Task AddAsync(TEntity entity);
+        Task DeletarAsync(TEntity entity);
+        Task AtualizarAsync(TEntity entity);
     }
 }
